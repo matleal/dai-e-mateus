@@ -21,10 +21,13 @@ export default function SaveTheDate() {
         </h2>
         <p>
           <span className="text-gray-500">
-            Prepare-se para uma surpresa emocionante! Apesar de termos marcado
-            em cima da hora, decidimos comemorar um momento especial juntos,
-            nosso casamento. Reserve a data para participar de um dos momentos
-            mais especias da nossa vida!
+            Prepare-se para uma surpresa emocionante!
+            <br />
+            Apesar de termos marcado em cima da hora, decidimos comemorar um
+            momento especial juntos, nosso casamento. Reserve a data para
+            participar de um dos momentos mais especias da nossa vida!
+            <br />
+            <span className="font-bold">Novidades em breve!</span>
           </span>
         </p>
         <div className="flex justify-center">
