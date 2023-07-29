@@ -1,5 +1,8 @@
+"use client";
+
 import Head from "next/head";
 import Cronometro from "./components/Cronometro";
+import GuestsConfirm from "./components/GuestsConfirm";
 import Historia from "./components/Historia";
 import Localizacao from "./components/Localizacao";
 import Madrinhas from "./components/Madrinhas";
@@ -21,6 +24,7 @@ export default function Home() {
         <Localizacao></Localizacao>
         <Madrinhas></Madrinhas>
         <Padrinhos></Padrinhos>
+        <GuestsConfirm></GuestsConfirm>
         <Cronometro></Cronometro>
       </div>
     </>
