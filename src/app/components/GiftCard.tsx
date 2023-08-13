@@ -29,7 +29,7 @@ export default function GiftCard(gift: any) {
           src={gift.product.images[0]}
         />
       </div>
-      <div className="flex flex-col gap-2 text-left">
+      <div className="flex flex-col text-left gap-2">
         <h1 className="font-bold ">{gift.product.name}</h1>
         <p className="text-gray-500 text-sm">{gift.product.description}</p>
         <p className="text-gray-500 font-bold">
