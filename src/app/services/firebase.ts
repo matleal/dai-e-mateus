@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -23,6 +23,21 @@ export default async function saveData(collectionString: string, data: any) {
   try {
     const newDocRef = collection(db, collectionString);
     await addDoc(newDocRef, data);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+export async function getData(collectionString: string) {
+  try {
+    const docRef = collection(db, collectionString);
+    const collectionSnapshot = await getDocs(docRef);
+
+    const collectionData = collectionSnapshot.docs.map((doc) => {
+      return { id: doc.id, ...doc.data()! };
+    });
+
+    return collectionData;
   } catch (e) {
     console.error("Error adding document: ", e);
   }
