@@ -1,25 +1,10 @@
 "use client";
 
-import axios from "axios";
 import { MouseEvent } from "react";
 
 export default function GiftCard(gift: any) {
   const handleGiftButton = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
-    const { data } = await axios.post(
-      "/api/createCheckoutSession",
-      {
-        priceId: gift.id,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    window.location.assign(data.sessionUrl);
   };
 
   return (
