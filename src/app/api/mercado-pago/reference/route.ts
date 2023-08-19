@@ -1,16 +1,16 @@
 import { getBaseUrl } from "@/app/services/url";
 import mercadopago from "mercadopago";
+import { CreatePreferencePayload } from "mercadopago/models/preferences/create-payload.model";
 
 mercadopago.configure({
-  access_token:
-    "TEST-7392384281194045-081710-716f0f342027f6e34a7cfa04d2ae9d0d-181959770",
+  access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN!,
 });
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    let preference = {
+    let preference: CreatePreferencePayload = {
       items: [
         {
           title: body.productName,
@@ -26,6 +26,8 @@ export async function POST(req: Request) {
         success: `${getBaseUrl()}/pages/gifts`,
         failure: `${getBaseUrl()}/pages/gifts`,
       },
+      auto_return: "approved",
+      external_reference: body.productId,
     };
 
     const preferenceRes = (await mercadopago.preferences.create(preference))

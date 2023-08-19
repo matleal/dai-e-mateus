@@ -1,6 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  getFirestore,
+  updateDoc,
+} from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -40,5 +47,18 @@ export async function getData(collectionString: string) {
     return collectionData;
   } catch (e) {
     console.error("Error getting documents: ", e);
+  }
+}
+
+export async function updateDataById(
+  collectionString: string,
+  id: string,
+  data: any
+) {
+  try {
+    const docRef = doc(db, collectionString);
+    updateDoc(docRef, id, data);
+  } catch (e) {
+    console.error("Error updating document: ", e);
   }
 }
