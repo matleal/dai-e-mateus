@@ -8,10 +8,12 @@ export async function POST(req: Request) {
       notification.type === "payment" &&
       notification.action === "payment.created"
     ) {
+      console.log("notification.data.id", notification.data.id);
       const paymentId = notification.data.id;
       const paymentDetails = await fetchPaymentDetailsFromMercadoPago(
         paymentId
       );
+      console.log("paymentDetails", paymentDetails);
       const payerInfo = paymentDetails.payer;
 
       if (paymentDetails.status === "approved") {

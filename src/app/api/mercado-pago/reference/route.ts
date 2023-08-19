@@ -33,6 +33,8 @@ export async function POST(req: Request) {
     const preferenceRes = (await mercadopago.preferences.create(preference))
       .body;
 
+    console.log("preferenceRes", preferenceRes);
+
     return new Response(JSON.stringify(preferenceRes.init_point), {
       status: 200,
     });
