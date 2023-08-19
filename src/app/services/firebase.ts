@@ -39,6 +39,6 @@ export async function getData(collectionString: string) {
 
     return collectionData;
   } catch (e) {
-    console.error("Error adding document: ", e);
+    console.error("Error getting documents: ", e);
   }
 }

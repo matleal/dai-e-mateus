@@ -1,9 +1,11 @@
-import GiftCard from "../components/GiftCard";
-import Navbar from "../components/Navbar";
-import { getProductsPrices } from "../services/stripe";
+"use client";
+
+import GiftCard from "@/app/components/GiftCard";
+import { getData } from "@/app/services/firebase";
+import Navbar from "../../components/Navbar";
 
 export default async function Gifts() {
-  const gifts = await getProductsPrices();
+  const gifts = await getData("gifts");
 
   return (
     <>

@@ -1,0 +1,41 @@
+import { getBaseUrl } from "@/app/services/url";
+import mercadopago from "mercadopago";
+
+mercadopago.configure({
+  access_token:
+    "TEST-7392384281194045-081710-716f0f342027f6e34a7cfa04d2ae9d0d-181959770",
+});
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+
+    let preference = {
+      items: [
+        {
+          title: body.productName,
+          unit_price: parseFloat(body.productPrice),
+          quantity: 1,
+        },
+      ],
+      payer: {
+        email: body.payerEmail,
+        name: body.payerName,
+      },
+      back_urls: {
+        success: `${getBaseUrl()}/pages/gifts`,
+        failure: `${getBaseUrl()}/pages/gifts`,
+      },
+    };
+
+    const preferenceRes = (await mercadopago.preferences.create(preference))
+      .body;
+
+    return new Response(JSON.stringify(preferenceRes.init_point), {
+      status: 200,
+    });
+  } catch (error) {
+    console.log(error);
+    return new Response(JSON.stringify(error), { status: 500 });
+  }
+}
