@@ -19,8 +19,6 @@ export default function GiftCard(gift: any) {
     },
   });
 
-  console.log(gift);
-
   const createCheckoutUrl = async (values: typeof form.values) => {
     await axios
       .post("/api/mercado-pago/reference", {
