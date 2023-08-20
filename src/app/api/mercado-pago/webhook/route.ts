@@ -16,9 +16,8 @@ export async function POST(req: Request) {
       console.log("paymentDetails", paymentDetails);
 
       if (paymentDetails.status === "approved") {
-        console.log("entrei no approved");
-
-        const payerName = paymentDetails.metadata.payerName;
+        const payerName = paymentDetails.metadata.payer_name;
+        console.log("Name!", payerName);
         await updateDataById("gifts", paymentDetails.external_reference, {
           giver: payerName,
         });
