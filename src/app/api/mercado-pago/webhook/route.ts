@@ -15,7 +15,10 @@ export async function POST(req: Request) {
       );
       console.log("paymentDetails", paymentDetails);
 
-      if (paymentDetails.status === "approved") {
+      if (
+        paymentDetails.status === "approved" ||
+        paymentDetails.status === "pending"
+      ) {
         const payerName = paymentDetails.metadata.payer_name;
         console.log("Name!", payerName);
         await updateDataById("gifts", paymentDetails.external_reference, {
