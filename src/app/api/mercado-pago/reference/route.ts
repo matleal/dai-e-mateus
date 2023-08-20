@@ -1,6 +1,5 @@
 import { getBaseUrl } from "@/app/services/url";
 import mercadopago from "mercadopago";
-import { CreatePreferencePayload } from "mercadopago/models/preferences/create-payload.model";
 
 mercadopago.configure({
   access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN!,
@@ -10,7 +9,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
 
-    let preference: CreatePreferencePayload = {
+    let preference: any = {
       items: [
         {
           title: body.productName,
@@ -28,6 +27,9 @@ export async function POST(req: Request) {
       },
       auto_return: "approved",
       external_reference: body.productId,
+      metadata: {
+        payerName: body.payerName,
+      },
     };
 
     const preferenceRes = (await mercadopago.preferences.create(preference))

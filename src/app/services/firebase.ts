@@ -57,7 +57,7 @@ export async function updateDataById(
 ) {
   try {
     const docRef = doc(db, collectionString);
-    updateDoc(docRef, id, data);
+    return updateDoc(docRef, id, data);
   } catch (e) {
     console.error("Error updating document: ", e);
   }

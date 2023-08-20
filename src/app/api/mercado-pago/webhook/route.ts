@@ -14,12 +14,13 @@ export async function POST(req: Request) {
         paymentId
       );
       console.log("paymentDetails", paymentDetails);
-      const payerInfo = paymentDetails.payer;
 
       if (paymentDetails.status === "approved") {
+        console.log("entrei no approved");
+
+        const payerName = paymentDetails.metadata.payerName;
         await updateDataById("gifts", paymentDetails.external_reference, {
-          giver: payerInfo?.first_name + " " + payerInfo?.last_name,
-          giverEmail: payerInfo?.email,
+          giver: payerName,
         });
       }
     }
