@@ -17,7 +17,8 @@ export async function POST(req: Request) {
 
       if (
         paymentDetails.status === "approved" ||
-        paymentDetails.status === "pending"
+        paymentDetails.status === "pending" ||
+        paymentDetails.status === "in_process"
       ) {
         const payerName = paymentDetails.metadata.payer_name;
         console.log("Name!", payerName);
