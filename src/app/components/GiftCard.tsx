@@ -77,10 +77,12 @@ export default function GiftCard(gift: any) {
             src={gift.imageUrl}
           />
         </div>
-        <div className="flex flex-col text-left gap-2">
-          <h1 className="font-bold ">{gift.name}</h1>
-          <p className="text-gray-500 text-sm">{gift.description}</p>
-          <p className="text-gray-500 font-bold">R${gift.price}</p>
+        <div className="flex flex-col justify-between text-left gap-2 h-full">
+          <div className="flex-grow">
+            <h1 className="font-bold ">{gift.name}</h1>
+            <p className="text-gray-500 text-xs">{gift.description}</p>
+            <p className="text-gray-500 font-bold">R${gift.price}</p>
+          </div>
           <button
             onClick={open}
             className="bg-primary text-white rounded text-sm p-2 hover:shadow-lg hover:bg-white hover:text-primary hover:border font-bold transition-colors duration-500"
