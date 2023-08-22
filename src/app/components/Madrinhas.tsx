@@ -3,8 +3,8 @@ import { Image } from "@mantine/core";
 
 export default function Madrinhas() {
   return (
-    <div className="flex flex-wrap justify-between gap-6 md:gap-0 py-10 px:12 md:px-24 items-center">
-      <div className="w-full md:w-2/5 flex flex-col text-center gap-6">
+    <div className="flex flex-wrap justify-center md:justify-between gap-6 md:gap-0 py-10 px:12 md:px-24 items-center">
+      <div className="w-full md:w-2/5 flex flex-col text-center gap-6 sm:mb-4">
         <h1
           className="text-gray-500 font-bold text-4xl"
           style={{ fontFamily: "brittany" }}

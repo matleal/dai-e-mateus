@@ -4,12 +4,14 @@ export default function Navbar() {
   return (
     <nav className="flex items-center justify-between bg-white px-10 py-6 border-b border-2 border-grey-300">
       <div className="flex items-center">
-        <span
-          className="text-gray-500 font-bold text-lg cursor-pointer"
-          style={{ fontFamily: "brittany" }}
-        >
-          Daillayne e Mateus
-        </span>
+        <Link href="/">
+          <span
+            className="text-gray-500 font-bold text-lg cursor-pointer"
+            style={{ fontFamily: "brittany" }}
+          >
+            Daillayne e Mateus
+          </span>
+        </Link>
       </div>
       <ul className="flex items-center text-sm">
         {/* <li className="ml-6">

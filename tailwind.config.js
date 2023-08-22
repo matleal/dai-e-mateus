@@ -15,6 +15,9 @@ module.exports = {
       colors: {
         primary: "#778c43",
       },
+      aspectRatio: {
+        "9/16": "9 / 16",
+      },
     },
   },
   plugins: [],

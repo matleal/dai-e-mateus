@@ -1,13 +1,11 @@
 "use client";
 
-import { Carousel } from "@mantine/carousel";
-import { Image } from "@mantine/core";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 
 export default function SaveTheDate() {
   return (
-    <div className="flex flex-wrap justify-between gap-6 md:gap-0 py-10 px:12 md:px-24 items-center">
-      <div className="w-full md:w-2/5 flex flex-col text-center gap-6">
+    <div className="flex flex-wrap justify-center gap-6 py-10 px:12 md:px-24 items-center">
+      <div className="w-4/5 flex gap-4 flex-col text-center">
         <h1
           className="text-gray-500 font-bold text-4xl"
           style={{ fontFamily: "brittany" }}
@@ -26,6 +24,8 @@ export default function SaveTheDate() {
             você!
           </span>
         </p>
+      </div>
+      <div className="w-4/5">
         <div className="flex justify-center">
           <AddToCalendarButton
             label="Adicionar ao calendário"
@@ -40,9 +40,7 @@ export default function SaveTheDate() {
             size="3"
           ></AddToCalendarButton>
         </div>
-      </div>
-      <div className="w-full md:w-2/5">
-        <Carousel
+        {/* <Carousel
           slideSize="70%"
           height="100%"
           align="center"
@@ -92,7 +90,7 @@ export default function SaveTheDate() {
               src="/assets/_MG_9583.jpg"
             />
           </Carousel.Slide>
-        </Carousel>
+        </Carousel> */}
       </div>
     </div>
   );
