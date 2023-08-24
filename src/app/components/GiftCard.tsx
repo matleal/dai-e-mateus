@@ -1,13 +1,15 @@
 "use client";
 
-import { Modal, TextInput } from "@mantine/core";
+import { LoadingOverlay, Modal, TextInput } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useDisclosure } from "@mantine/hooks";
 import { IconAt } from "@tabler/icons-react";
 import axios from "axios";
+import { useState } from "react";
 
 export default function GiftCard(gift: any) {
   const [opened, { open, close }] = useDisclosure(false);
+  const [isLoadingVisible, setIsLoadingVisible] = useState(false);
   const form = useForm({
     initialValues: {
       name: "",
@@ -20,6 +22,8 @@ export default function GiftCard(gift: any) {
   });
 
   const createCheckoutUrl = async (values: typeof form.values) => {
+    setIsLoadingVisible(true);
+
     await axios
       .post("/api/mercado-pago/reference", {
         productId: gift.id,
@@ -29,12 +33,21 @@ export default function GiftCard(gift: any) {
         payerEmail: values.email,
       })
       .then((response) => {
-        window.open(response.data, "_blank");
+        window.location.href = response.data;
       });
+
+    setIsLoadingVisible(false);
   };
 
   return (
     <>
+      <LoadingOverlay
+        loaderProps={{ size: "md", color: "black", variant: "oval" }}
+        overlayOpacity={0.3}
+        overlayColor="#c5c5c5"
+        visible={isLoadingVisible}
+      />
+
       <Modal opened={opened} onClose={close}>
         <form onSubmit={form.onSubmit(createCheckoutUrl)}>
           <div className="flex flex-wrap flex-col gap-3">

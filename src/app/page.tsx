@@ -1,5 +1,3 @@
-"use client";
-
 import Head from "next/head";
 import Convidados from "./components/Convidados";
 import Cronometro from "./components/Cronometro";
