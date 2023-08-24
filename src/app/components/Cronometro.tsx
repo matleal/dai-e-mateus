@@ -39,11 +39,11 @@ export default function Cronometro() {
 
   return (
     <>
-      <div className="flex flex-col items-center py-8 w-ful h-auto bg-primary bg-opacity-90">
-        <h1 className="text-white text-4xl" style={{ fontFamily: "brittany" }}>
+      <div className="flex text-white flex-col items-center py-8 w-ful h-auto bg-primary bg-opacity-90">
+        <h1 className=" text-4xl" style={{ fontFamily: "brittany" }}>
           Falta pouco!
         </h1>
-        <div className="bg-white rounded-lg shadow-lg p-4 flex items-center justify-center mt-6">
+        <div className=" rounded-lg shadow-xl p-4 flex items-center justify-center mt-6">
           <div className="flex flex-wrap justify-center items-center text-center">
             <div className="w-full md:w-auto px-3 mb-4 md:mb-0">
               <span className="text-4xl leading-none" id="days">
