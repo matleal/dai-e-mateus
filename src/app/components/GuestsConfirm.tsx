@@ -30,7 +30,10 @@ export default function GuestsConfirm() {
   };
 
   return (
-    <div className="flex flex-col justify-center md:gap-0 py-10 px-12 md:px-24 items-center text-center">
+    <div
+      className="flex flex-col justify-center md:gap-0 py-10 px-12 md:px-24 items-center text-center"
+      id="confirm-div"
+    >
       <h1
         className="text-gray-500 font-bold text-4xl"
         style={{ fontFamily: "brittany" }}
