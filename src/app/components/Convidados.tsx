@@ -46,15 +46,6 @@ export default function Madrinhas() {
           ))}
         </ul>
       </div>
-      {/* <div className="flex flex-col text-center gap-6">
-        <Image
-          mx="auto"
-          radius="md"
-          width={600}
-          height={300}
-          src="/assets/madrinhas-img.jpg"
-        ></Image>
-      </div> */}
     </div>
   );
 }
