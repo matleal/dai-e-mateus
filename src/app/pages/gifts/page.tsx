@@ -19,7 +19,6 @@ export default async function Gifts() {
         overlayColor="#c5c5c5"
         visible={isLoadingVisible}
       />
-
       <div className="flex flex-col gap-6 min-h-screen">
         <Navbar></Navbar>
         <div className="flex flex-col justify-center gap-6 md:gap-0 py-10 px-12 md:px-24 items-center text-center">
@@ -29,6 +28,18 @@ export default async function Gifts() {
           >
             Lista de presentes
           </h1>
+
+          <p className="text-center md:w-2/4 mt-4">
+            <span className="text-gray-500">
+              <span className="border-b border-1">
+                Nos ajude a montar nosso novo lar!
+              </span>{" "}
+              <br />
+              Por nossa plataforma você pode pagar no cartão de crédito, mas se
+              desejar utilizar o pix ou você mesmo comprar o presente em uma
+              loja da sua escolha, entre em contato conosco pelo whatsapp.
+            </span>
+          </p>
 
           <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4 mt-11">
             {gifts &&
