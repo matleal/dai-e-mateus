@@ -16,7 +16,8 @@ export default function Madrinhas() {
             "Por favor, não levem pessoas que não foram convidadas;",
             "Não chegue atrasado!",
             "Lembre-se: branco é a cor da noiva;",
-            "E verde oliva e a cor das madrinhas;",
+            "Verde oliva é a cor das madrinhas;",
+            "Marsala e fúcsia é a cor das mães;",
             "Seu celular é bem-vindo, tire muitas fotos, mas cuidado para não atrapalhar o fotografo;",
             "E não menos importante, divirta-se muito com a gente nessa data tão importante",
           ].map((text, index) => (
