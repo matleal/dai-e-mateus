@@ -2,7 +2,8 @@ import { getBaseUrl } from "@/app/services/url";
 import mercadopago from "mercadopago";
 
 mercadopago.configure({
-  access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN!,
+  access_token:
+    "TEST-7392384281194045-081710-716f0f342027f6e34a7cfa04d2ae9d0d-181959770",
 });
 
 export async function POST(req: Request) {
