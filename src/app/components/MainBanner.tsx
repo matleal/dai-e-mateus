@@ -1,3 +1,5 @@
+"use client";
+
 export default function MainBanner() {
   return (
     <div className="flex w-full h-[83vh]">
