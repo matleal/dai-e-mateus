@@ -10,7 +10,7 @@ async function getData() {
   const res = await fetch(`${url}/api/gifts`);
 
   if (!res.ok) {
-    throw new Error("Failed to fetch data");
+    throw new Error("Failed to fetch data...");
   }
 
   return res.json();
