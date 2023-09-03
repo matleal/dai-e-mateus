@@ -1,5 +1,4 @@
 import GiftCard from "@/app/components/GiftCard";
-import { getData } from "@/app/services/firebase";
 import Navbar from "../../components/Navbar";
 
 async function getGifts() {
@@ -19,7 +18,7 @@ async function getGifts() {
 
 export default async function Gifts() {
   // const [isLoadingVisible, setIsLoadingVisible] = useState(false);
-  const gifts = await getData("gifts");
+  const gifts = await getGifts();
   // setIsLoadingVisible(false);
 
   return (
