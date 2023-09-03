@@ -2,7 +2,12 @@ import GiftCard from "@/app/components/GiftCard";
 import Navbar from "../../components/Navbar";
 
 async function getData() {
-  const res = await fetch("https://dai-e-mateus.vercel.app/api/gifts");
+  const url =
+    process.env.VERCEL_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://dai-e-mateus.vercel.app";
+
+  const res = await fetch(`${url}/api/gifts`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
