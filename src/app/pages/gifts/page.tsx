@@ -1,7 +1,8 @@
 import GiftCard from "@/app/components/GiftCard";
+import { getData } from "@/app/services/firebase";
 import Navbar from "../../components/Navbar";
 
-async function getData() {
+async function getGifts() {
   const url =
     process.env.VERCEL_ENV === "development"
       ? "http://localhost:3000"
@@ -18,7 +19,7 @@ async function getData() {
 
 export default async function Gifts() {
   // const [isLoadingVisible, setIsLoadingVisible] = useState(false);
-  const gifts = await getData();
+  const gifts = await getData("gifts");
   // setIsLoadingVisible(false);
 
   return (
