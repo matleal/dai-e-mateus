@@ -37,7 +37,7 @@ export async function POST(req: Request) {
 
 async function fetchPaymentDetailsFromMercadoPago(paymentId: string) {
   const paymentDetails = await fetch(
-    `https://api.mercadopago.com/v1/payments/${paymentId}?access_token=TEST-7392384281194045-081710-716f0f342027f6e34a7cfa04d2ae9d0d-181959770`
+    `https://api.mercadopago.com/v1/payments/${paymentId}?access_token=APP_USR-7392384281194045-081710-2ece7bfe8da1d3e04c39d7ef1bb59056-181959770`
   );
 
   return paymentDetails.json();
