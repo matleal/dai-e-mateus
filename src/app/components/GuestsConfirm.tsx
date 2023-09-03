@@ -23,6 +23,7 @@ export default function GuestsConfirm() {
   const handleSubmit = (values: typeof form.values) => {
     saveData("guests", values);
     form.reset();
+    setDisplayShowsSize(false);
     setModalOpen(true);
   };
 
