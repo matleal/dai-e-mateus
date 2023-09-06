@@ -7,7 +7,7 @@ async function getGifts() {
       ? "http://localhost:3000"
       : "https://dai-e-mateus.vercel.app";
 
-  const res = await fetch(`${url}/api/gifts`, { cache: "no-store" });
+  const res = await fetch(`${url}/api/gifts`, { next: { revalidate: 10 } });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data...");
@@ -33,7 +33,7 @@ export default async function Gifts() {
         <Navbar></Navbar>
         <div className="flex flex-col justify-center gap-6 md:gap-0 py-10 px-12 md:px-24 items-center text-center">
           <h1
-            className="text-gray-500 font-bold text-4xl"
+            className="font-bold text-4xl text-gray-500 "
             style={{ fontFamily: "brittany" }}
           >
             Lista de presentes
