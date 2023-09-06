@@ -7,7 +7,7 @@ async function getGifts() {
       ? "http://localhost:3000"
       : "https://dai-e-mateus.vercel.app";
 
-  const res = await fetch(`${url}/api/gifts`);
+  const res = await fetch(`${url}/api/gifts`, { cache: "no-store" });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data...");
