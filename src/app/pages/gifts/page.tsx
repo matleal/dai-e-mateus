@@ -41,7 +41,7 @@ export default async function Gifts() {
 
           <p className="text-center md:w-2/4 mt-4">
             <span className="text-gray-500">
-              <span className="border-b border-1">
+              <span className="border-1 border-b">
                 Nos ajude a montar nosso novo lar!
               </span>{" "}
               <br />
