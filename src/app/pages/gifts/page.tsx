@@ -31,7 +31,7 @@ export default async function Gifts() {
       /> */}
       <div className="flex flex-col gap-6 min-h-screen">
         <Navbar></Navbar>
-        <div className="flex justify-center flex-col gap-6 md:gap-0 py-10 px-12 md:px-24 items-center text-center">
+        <div className="flex justify-center gap-6 flex-col md:gap-0 py-10 px-12 md:px-24 items-center text-center">
           <h1
             className="font-bold text-4xl text-gray-500 "
             style={{ fontFamily: "brittany" }}
