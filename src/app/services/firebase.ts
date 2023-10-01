@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDocs,
   getFirestore,
@@ -60,5 +61,14 @@ export async function updateDataById(
     return updateDoc(docRef, data);
   } catch (e) {
     console.error("Error updating document: ", e);
+  }
+}
+
+export async function deleteData(collectionString: string, id: string) {
+  try {
+    const docRef = doc(db, collectionString, id);
+    return await deleteDoc(docRef);
+  } catch (e) {
+    console.error("Error deleting document: ", e);
   }
 }
