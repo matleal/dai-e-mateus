@@ -20,8 +20,9 @@ export default async function Page() {
   const tableRows = guests
     ?.filter((guest: any) => guest.nome)
     .sort((a: any, b: any) => (a.data.toDate() > b.data.toDate() ? -1 : 1))
-    .map((guest: any) => (
+    .map((guest: any, index: number) => (
       <tr key={guest.id}>
+        <td className="px-6 py-4 whitespace-nowrap">{index}</td>
         <td className="whitespace-nowrap px-6 py-4">
           <div className="flex items-center">
             <div className="ml-4">
@@ -83,6 +84,7 @@ export default async function Page() {
           <Table>
             <thead>
               <tr>
+                <th>-</th>
                 <th>
                   <div className="flex items-center">Nome</div>
                 </th>
