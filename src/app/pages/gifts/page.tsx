@@ -17,18 +17,10 @@ async function getGifts() {
 }
 
 export default async function Gifts() {
-  // const [isLoadingVisible, setIsLoadingVisible] = useState(false);
   const gifts = await getGifts();
-  // setIsLoadingVisible(false);
 
   return (
     <>
-      {/* <LoadingOverlay
-        overlayOpacity={0.3}
-        loaderProps={{ size: "md", color: "black", variant: "oval" }}
-        overlayColor="#c5c5c5"
-        visible={isLoadingVisible}
-      /> */}
       <div className="flex flex-col gap-6 min-h-screen">
         <Navbar></Navbar>
         <div className="flex justify-center gap-6 flex-col md:gap-0 py-10 px-12 md:px-24 items-center text-center">
