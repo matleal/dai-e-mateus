@@ -24,8 +24,8 @@ export default async function Gifts() {
   return (
     <>
       {/* <LoadingOverlay
-        loaderProps={{ size: "md", color: "black", variant: "oval" }}
         overlayOpacity={0.3}
+        loaderProps={{ size: "md", color: "black", variant: "oval" }}
         overlayColor="#c5c5c5"
         visible={isLoadingVisible}
       /> */}
