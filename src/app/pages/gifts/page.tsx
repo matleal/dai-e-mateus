@@ -1,3 +1,5 @@
+"use client";
+
 import GiftCard from "@/app/components/GiftCard";
 import Navbar from "../../components/Navbar";
 
