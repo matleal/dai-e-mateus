@@ -25,7 +25,7 @@ export default async function Gifts() {
         <Navbar></Navbar>
         <div className="flex justify-center gap-6 flex-col md:gap-0 py-10 px-12 md:px-24 items-center text-center">
           <h1
-            className="font-bold text-4xl text-gray-500 "
+            className="font-bold text-4xl text-gray-500"
             style={{ fontFamily: "brittany" }}
           >
             Lista de presentes
