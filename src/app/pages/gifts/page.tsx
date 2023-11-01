@@ -1,5 +1,3 @@
-"use client";
-
 import GiftCard from "@/app/components/GiftCard";
 import { getData } from "@/app/services/firebase";
 import Navbar from "../../components/Navbar";
