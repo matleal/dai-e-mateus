@@ -1,23 +1,11 @@
+"use client";
+
 import GiftCard from "@/app/components/GiftCard";
+import { getData } from "@/app/services/firebase";
 import Navbar from "../../components/Navbar";
 
-async function getGifts() {
-  const url =
-    process.env.VERCEL_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://dai-e-mateus.vercel.app";
-
-  const res = await fetch(`${url}/api/gifts`, { next: { revalidate: 10 } });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data...");
-  }
-
-  return res.json();
-}
-
 export default async function Gifts() {
-  const gifts = await getGifts();
+  const gifts = await getData("gifts");
 
   return (
     <>
