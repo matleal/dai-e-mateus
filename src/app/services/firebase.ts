@@ -9,9 +9,7 @@ import {
   doc,
   getDocs,
   getFirestore,
-  query,
   updateDoc,
-  where,
 } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -43,15 +41,10 @@ export default async function saveData(collectionString: string, data: any) {
 export async function getData(collectionString: string) {
   try {
     const docRef = collection(db, collectionString);
-
-    // Add a query to filter documents where "sexo" is "F"
-    const q = query(docRef, where("sexo", "==", "F"));
-
-    // Execute the query
-    const collectionSnapshot = await getDocs(q);
+    const collectionSnapshot = await getDocs(docRef);
 
     const collectionData = collectionSnapshot.docs.map((doc) => {
-      return { id: doc.id, ...doc.data() };
+      return { id: doc.id, ...doc.data()! };
     });
 
     return collectionData;
