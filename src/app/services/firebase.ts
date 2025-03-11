@@ -16,12 +16,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBOUvSo6b3H_X6mvQJXNZYD_JtcBIwCEeY",
-  authDomain: "mateus-e-dai.firebaseapp.com",
-  projectId: "mateus-e-dai",
-  storageBucket: "mateus-e-dai.appspot.com",
-  messagingSenderId: "380691643344",
-  appId: "1:380691643344:web:7a643cff967d313b6417d5",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
@@ -43,7 +43,7 @@ export async function getData(collectionString: string) {
     const docRef = collection(db, collectionString);
     const collectionSnapshot = await getDocs(docRef);
 
-    const collectionData = collectionSnapshot.docs.map((doc) => {
+    const collectionData = collectionSnapshot.docs.map((doc: any) => {
       return { id: doc.id, ...doc.data()! };
     });
 
